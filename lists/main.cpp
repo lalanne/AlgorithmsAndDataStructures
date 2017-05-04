@@ -16,23 +16,23 @@ int main() {
     list->show();
 
     Node* n2 = new Node(10);
-    list->push(n2);
+    list->push_back(n2);
     list->show();
 
     Node* n3 = new Node(5);
-    list->push(n3);
+    list->push_back(n3);
     list->show();
 
     Node* n4 = new Node(6);
-    list->push(n4);
+    list->push_back(n4);
     list->show();
 
     Node* n5 = new Node(6);
-    list->push(n5);
+    list->push_back(n5);
     list->show();
 
     Node* n6 = new Node(-9);
-    list->push(n6);
+    list->push_back(n6);
     list->show();
 
     Node* res = list->pop();
@@ -46,6 +46,15 @@ int main() {
     res = list->pop();
     list->show();
     res->show();
+
+    res = list->find(10);
+    res->show();
+
+    list->push_front(n4);
+    list->show();
+
+    list->push_front(n6);
+    list->show();
 
     return 0;
 }

@@ -6,17 +6,13 @@
 
 class Node {
     public:
-        Node(const int data) : m_data(data), next(NULL) {}
+        Node(const int data) : data(data), next(NULL) {}
 
-        void show() const { std::cout << m_data << " "; }
+        void show() const { std::cout << data << " "; }
 
     public:
         Node* next;
-
-    private:
-        const int m_data;
-
-
+        const int data;
 };
 
 #endif

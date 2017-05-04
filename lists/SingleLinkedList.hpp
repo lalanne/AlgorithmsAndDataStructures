@@ -25,7 +25,7 @@ class SingleLinkedList {
             std::cout << std::endl;
         }
 
-        void push(Node* node) {
+        void push_back(Node* node) {
             if(!head) return;
 
             Node* n = head;
@@ -37,6 +37,14 @@ class SingleLinkedList {
                     n = n->next;
                 }
             }
+        }
+
+        void push_front(Node* node){
+            if(!head) return;
+
+            node->next = head;
+            head = node;
+
         }
 
         Node* pop() {
@@ -51,6 +59,18 @@ class SingleLinkedList {
                     return tmp;
                 } 
                 n = n->next;
+            }
+
+            return NULL;
+        }
+
+        Node* find(const int data) const {
+            if(!head) return NULL;
+            
+            Node* n = head;
+            while(n) {
+                if(n->data == data) return n;
+                else n = n->next;
             }
 
             return NULL;

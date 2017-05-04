@@ -101,7 +101,9 @@ class SingleLinkedList {
                     n->next = n->next->next;
                     tmp->next = NULL;
                 }    
-                n = n->next;
+                else {
+                    n = n->next;
+                }
             }
         }
 

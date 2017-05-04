@@ -76,6 +76,18 @@ class SingleLinkedList {
             return NULL;
         }
 
+        void removeAll(const int data) {
+            if(!head) return;
+            
+            Node* n = head;
+            while(n) {
+                if(n->next->data == data) {
+                    n->next = n->next->next;
+                }    
+                n = n->next;
+            }
+        }
+
     private:
         Node* head;
 };

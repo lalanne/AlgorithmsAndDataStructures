@@ -56,6 +56,9 @@ int main() {
     list->push_front(n6);
     list->show();
 
+    list->removeAll(3);
+    list->show();
+
     return 0;
 }
 

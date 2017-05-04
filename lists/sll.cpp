@@ -16,12 +16,6 @@ TEST(sll, constructionWithNull) {
     EXPECT_EQ(0, list.size());
 }
 
-TEST(sll, popEmptyList) {
-    SingleLinkedList list(NULL);
-   
-    EXPECT_EQ(NULL, list.pop());
-}
-
 TEST(sll, addOneNodes) {
     Node h(3);
     Node n2(4);
@@ -30,6 +24,8 @@ TEST(sll, addOneNodes) {
     list.push_back(&n2);
    
     EXPECT_EQ(2, list.size());
+    EXPECT_EQ(4, (list.pop())->data);
+    EXPECT_EQ(3, (list.pop())->data);
 }
 
 TEST(sll, addTwoNodes) {
@@ -42,6 +38,9 @@ TEST(sll, addTwoNodes) {
     list.push_back(&n3);
    
     EXPECT_EQ(3, list.size());
+    EXPECT_EQ(5, (list.pop())->data);
+    EXPECT_EQ(4, (list.pop())->data);
+    EXPECT_EQ(3, (list.pop())->data);
 }
 
 TEST(sll, addThreeNodes) {
@@ -56,7 +55,19 @@ TEST(sll, addThreeNodes) {
     list.push_back(&n4);
    
     EXPECT_EQ(4, list.size());
+    EXPECT_EQ(6, (list.pop())->data);
+    EXPECT_EQ(5, (list.pop())->data);
+    EXPECT_EQ(4, (list.pop())->data);
+    EXPECT_EQ(3, (list.pop())->data);
 }
+
+TEST(sll, popEmptyList) {
+    SingleLinkedList list(NULL);
+   
+    EXPECT_EQ(NULL, list.pop());
+}
+
+
 
 
 

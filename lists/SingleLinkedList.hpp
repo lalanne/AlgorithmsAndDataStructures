@@ -97,7 +97,9 @@ class SingleLinkedList {
             Node* n = head;
             while(n) {
                 if(n->next && n->next->data == data) {
+                    Node* tmp = n->next;
                     n->next = n->next->next;
+                    tmp->next = NULL;
                 }    
                 n = n->next;
             }

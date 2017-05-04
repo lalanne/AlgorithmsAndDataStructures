@@ -128,5 +128,9 @@ TEST(sll, remove_one_node_who_matches_middle) {
     list.remove_all(5);
    
     EXPECT_EQ(4, list.size());
+    EXPECT_EQ(7, (list.pop())->data);
+    EXPECT_EQ(6, (list.pop())->data);
+    EXPECT_EQ(4, (list.pop())->data);
+    EXPECT_EQ(3, (list.pop())->data);
 }
 

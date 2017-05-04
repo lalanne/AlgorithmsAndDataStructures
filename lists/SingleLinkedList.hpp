@@ -39,6 +39,23 @@ class SingleLinkedList {
             }
         }
 
+        Node* pop() {
+            if(!head) return NULL;
+            if(!head->next) return head;
+
+            Node* n = head;
+            while(n) {
+                if(!n->next->next) {
+                    Node* tmp = n->next;
+                    n->next = NULL;
+                    return tmp;
+                } 
+                n = n->next;
+            }
+
+            return NULL;
+        }
+
     private:
         Node* head;
 };

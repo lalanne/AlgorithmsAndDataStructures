@@ -35,5 +35,19 @@ int main() {
     list->push(n6);
     list->show();
 
+    Node* res = list->pop();
+    list->show();
+    res->show();
+
+    res = list->pop();
+    list->show();
+    res->show();
+
+    res = list->pop();
+    list->show();
+    res->show();
+
     return 0;
 }
+
+

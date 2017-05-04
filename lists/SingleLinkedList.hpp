@@ -91,12 +91,12 @@ class SingleLinkedList {
             return NULL;
         }
 
-        void removeAll(const int data) {
+        void remove_all(const int data) {
             if(!head) return;
             
             Node* n = head;
             while(n) {
-                if(n->next->data == data) {
+                if(n->next && n->next->data == data) {
                     n->next = n->next->next;
                 }    
                 n = n->next;

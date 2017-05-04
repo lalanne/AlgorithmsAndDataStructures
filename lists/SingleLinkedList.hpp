@@ -8,7 +8,9 @@
 class SingleLinkedList {
     public:
         SingleLinkedList(Node* head) : head(head) {
-            head->next = NULL;
+            if(head) {
+                head->next = NULL;
+            }   
         }
 
         int size() const {

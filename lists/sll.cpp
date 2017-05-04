@@ -9,6 +9,12 @@ TEST(sll, construction) {
     EXPECT_EQ(1, list.size());
 }
 
+TEST(sll, constructionWithNull) {
+    SingleLinkedList list(NULL);
+   
+    EXPECT_EQ(0, list.size());
+}
+
 TEST(sll, addOneNodes) {
     Node h(3);
     Node n2(4);

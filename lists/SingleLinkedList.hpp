@@ -63,7 +63,7 @@ class SingleLinkedList {
 
         }
 
-        Node* pop() {
+        Node* pop_back() {
             if(!head) return NULL;
             if(!head->next) return head;
 

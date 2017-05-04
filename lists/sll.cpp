@@ -154,3 +154,12 @@ TEST(sll, remove_two_nodes_who_matches_middle) {
     EXPECT_EQ(4, (list.pop())->data);
     EXPECT_EQ(3, (list.pop())->data);
 }
+
+TEST(sll, remove_node_head) {
+    Node h(5);
+    SingleLinkedList list(&h);
+
+    list.remove_all(5);
+
+    EXPECT_EQ(0, list.size());
+}

@@ -27,6 +27,13 @@ int main() {
     list->push(n4);
     list->show();
 
+    Node* n5 = new Node(6);
+    list->push(n5);
+    list->show();
+
+    Node* n6 = new Node(-9);
+    list->push(n6);
+    list->show();
 
     return 0;
 }

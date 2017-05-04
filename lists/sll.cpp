@@ -7,12 +7,19 @@ TEST(sll, construction) {
     SingleLinkedList list(&h);
    
     EXPECT_EQ(1, list.size());
+    EXPECT_EQ(3, (list.pop())->data);
 }
 
 TEST(sll, constructionWithNull) {
     SingleLinkedList list(NULL);
    
     EXPECT_EQ(0, list.size());
+}
+
+TEST(sll, popEmptyList) {
+    SingleLinkedList list(NULL);
+   
+    EXPECT_EQ(NULL, list.pop());
 }
 
 TEST(sll, addOneNodes) {

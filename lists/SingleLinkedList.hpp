@@ -3,6 +3,7 @@
 #define __SINGLE_LINKED_LIST__
 
 #include "Node.hpp"
+
 #include <iostream>
 
 class SingleLinkedList {
@@ -112,7 +113,19 @@ class SingleLinkedList {
             }
         }
 
-    private:
+        void remove_all() {
+            if(!head) return;
+            if(!head->next) head = NULL;
+            
+            Node* n = head;
+            while(n->next) {
+                n->next = n->next->next;
+            }
+
+            head = NULL;
+        }
+
+    public:
         Node* head;
 };
 

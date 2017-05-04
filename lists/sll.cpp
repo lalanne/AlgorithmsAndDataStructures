@@ -163,3 +163,24 @@ TEST(sll, remove_node_head) {
 
     EXPECT_EQ(0, list.size());
 }
+
+TEST(sll, remove_all_nodes) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
+
+    list.push_back(&n2);
+    list.push_back(&n3);
+    list.push_back(&n4);
+    list.push_back(&n5);
+
+    list.remove_all();
+
+    EXPECT_EQ(0, list.size());
+}
+
+
+

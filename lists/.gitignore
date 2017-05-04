@@ -1,2 +1,7 @@
 a.out
 *.gch
+tests
+cmake_install.cmake
+Makefile
+CMakeCache.txt
+CMakeFiles/

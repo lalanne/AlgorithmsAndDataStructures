@@ -11,6 +11,19 @@ class SingleLinkedList {
             head->next = NULL;
         }
 
+        int size() const {
+            Node* n = head;
+
+            int count = 0;
+
+            while(n) {
+                ++count;
+                n = n->next;
+            }
+
+            return count;
+        }
+
         void show() const {
             std::cout << "showing list : ";
 

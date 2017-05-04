@@ -115,7 +115,10 @@ class SingleLinkedList {
 
         void remove_all() {
             if(!head) return;
-            if(!head->next) head = NULL;
+            if(!head->next) {
+                head = NULL;
+                return;
+            }
             
             Node* n = head;
             while(n->next) {

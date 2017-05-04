@@ -182,5 +182,22 @@ TEST(sll, remove_all_nodes) {
     EXPECT_EQ(0, list.size());
 }
 
+TEST(sll, remove_all_nodes_from_empty_list) {
+    SingleLinkedList list(NULL);
+
+    list.remove_all();
+
+    EXPECT_EQ(0, list.size());
+}
+
+TEST(sll, remove_all_nodes_from_list_with_one_node) {
+    Node h(3);
+    SingleLinkedList list(&h);
+
+    list.remove_all();
+
+    EXPECT_EQ(0, list.size());
+}
+
 
 

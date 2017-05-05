@@ -9,16 +9,13 @@
 class SingleLinkedList {
     public:
         SingleLinkedList(Node* head) : head(head) {
-            if(head) {
-                head->next = NULL;
-            }   
+            if(head) head->next = NULL;
         }
 
         int size() const {
             Node* n = head;
 
             int count = 0;
-
             while(n) {
                 ++count;
                 n = n->next;
@@ -28,17 +25,16 @@ class SingleLinkedList {
         }
 
         void show() const {
-            std::cout << "showing list : ";
+            if(!head) std::cout << "Empty List!" << std::endl;
+            else {
+                Node* n = head;
+                while(n) {
+                    n->show();
+                    n = n->next;
+                }
 
-            if(!head) return;
-
-            Node* n = head;
-            while(n) {
-                n->show();
-                n = n->next;
+                std::cout << std::endl;
             }
-
-            std::cout << std::endl;
         }
 
         void push_back(Node* node) {
@@ -60,11 +56,14 @@ class SingleLinkedList {
         }
 
         void push_front(Node* node){
-            if(!head) return;
-
-            node->next = head;
-            head = node;
-
+            if(!head) {
+                head = node;
+                head->next = NULL;
+            }
+            else {
+                node->next = head;
+                head = node;
+            }
         }
 
         Node* pop_back() {

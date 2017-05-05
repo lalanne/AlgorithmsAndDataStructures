@@ -77,6 +77,16 @@ TEST(sll, pop_back_empty_list) {
     EXPECT_EQ(NULL, list.pop_back());
 }
 
+TEST(sll, push_front_empty_list) {
+    Node n(4);
+    SingleLinkedList list(NULL);
+
+    list.push_front(&n);
+   
+    EXPECT_EQ(1, list.size());
+    EXPECT_EQ(4, (list.pop_back())->data);
+}
+
 TEST(sll, push_front_one_node) {
     Node h(3);
     Node n2(4);

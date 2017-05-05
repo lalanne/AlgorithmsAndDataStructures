@@ -139,6 +139,8 @@ struct SingleLinkedList {
         head = NULL;
     }
 
+
+
     Node* head;
 };
 

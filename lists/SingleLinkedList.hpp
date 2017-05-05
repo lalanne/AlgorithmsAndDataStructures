@@ -11,6 +11,8 @@ struct SingleLinkedList {
         if(head) head->next = NULL;
     }
 
+    ~SingleLinkedList() { head = NULL; }
+
     int size() const {
         Node* n = head;
 

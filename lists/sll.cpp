@@ -16,6 +16,16 @@ TEST(sll, construction_with_null) {
     EXPECT_EQ(0, list.size());
 }
 
+TEST(sll, push_back_emtpy_list) {
+    Node n(4);
+    SingleLinkedList list(NULL);
+
+    list.push_back(&n);
+   
+    EXPECT_EQ(1, list.size());
+    EXPECT_EQ(4, (list.pop_back())->data);
+}
+
 TEST(sll, push_back_one_node) {
     Node h(3);
     Node n2(4);
@@ -199,5 +209,48 @@ TEST(sll, remove_all_nodes_from_list_with_one_node) {
     EXPECT_EQ(0, list.size());
 }
 
+TEST(sll, pop_front) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
 
+    list.push_back(&n2);
+    list.push_back(&n3);
+    list.push_back(&n4);
+    list.push_back(&n5);
+
+
+    EXPECT_EQ(5, list.size());
+    EXPECT_EQ(3, (list.pop_front())->data);
+}
+
+TEST(sll, pop_front_empty_list) {
+    SingleLinkedList list(NULL);
+
+    EXPECT_EQ(0, list.size());
+}
+
+TEST(sll, stack_behaviour) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
+
+    list.push_front(&n2);
+    list.push_front(&n3);
+    list.push_front(&n4);
+    list.push_front(&n5);
+
+    EXPECT_EQ(5, list.size());
+    EXPECT_EQ(7, (list.pop_front())->data);
+    EXPECT_EQ(5, (list.pop_front())->data);
+    EXPECT_EQ(5, (list.pop_front())->data);
+    EXPECT_EQ(4, (list.pop_front())->data);
+    EXPECT_EQ(3, (list.pop_front())->data);
+}
 

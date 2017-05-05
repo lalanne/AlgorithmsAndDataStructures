@@ -42,15 +42,19 @@ class SingleLinkedList {
         }
 
         void push_back(Node* node) {
-            if(!head) return;
-
-            Node* n = head;
-            while(n) {
-                if(n->next) n = n->next;
-                else {
-                    n->next = node;
-                    node->next = NULL;
-                    n = n->next;
+            if(!head) {
+                head = node;
+                head->next = NULL;
+            }
+            else {
+                Node* n = head;
+                while(n) {
+                    if(n->next) n = n->next;
+                    else {
+                        n->next = node;
+                        node->next = NULL;
+                        n = n->next;
+                    }
                 }
             }
         }
@@ -78,6 +82,15 @@ class SingleLinkedList {
             }
 
             return NULL;
+        }
+
+        Node* pop_front() {
+            if(!head) return NULL;
+
+            Node* tmp = head;
+            head = head->next;
+            tmp->next = NULL;
+            return tmp;
         }
 
         Node* find(const int data) const {

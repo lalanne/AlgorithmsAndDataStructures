@@ -4,7 +4,9 @@ compiler: gcc
 os: linux
 
 script:
+    - cd lists/
     - cmake .
     - make 
     - ./tests
+    - cd -
 

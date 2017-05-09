@@ -264,3 +264,57 @@ TEST(sll, stack_behaviour) {
     EXPECT_EQ(3, (list.pop_front())->data);
 }
 
+TEST(sll, m_to_last_middle) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
+
+    list.push_back(&n2);
+    list.push_back(&n3);
+    list.push_back(&n4);
+    list.push_back(&n5);
+
+    EXPECT_EQ(4, (list.m_to_last(3))->data);
+}
+
+TEST(sll, m_to_last_first) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
+
+    list.push_back(&n2);
+    list.push_back(&n3);
+    list.push_back(&n4);
+    list.push_back(&n5);
+
+    EXPECT_EQ(3, (list.m_to_last(4))->data);
+}
+
+TEST(sll, m_to_last_last) {
+    Node h(3);
+    Node n2(4);
+    Node n3(5);
+    Node n4(5);
+    Node n5(7);
+    SingleLinkedList list(&h);
+
+    list.push_back(&n2);
+    list.push_back(&n3);
+    list.push_back(&n4);
+    list.push_back(&n5);
+
+    EXPECT_EQ(7, (list.m_to_last(0))->data);
+}
+
+TEST(sll, m_to_last_empty_list) {
+    SingleLinkedList list(NULL);
+
+    EXPECT_EQ(NULL, list.m_to_last(0));
+}
+

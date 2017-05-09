@@ -142,15 +142,21 @@ struct SingleLinkedList {
     }
 
     Node* m_to_last(const int m) {
+        Node* n1 = head;
+        Node* n2 = head;
 
-        const int length = size();
-        const int index = length - m - 1;
-        Node* n = head;
-        for(int i=0; i<length; ++i) {
-            if(i == index) return n; 
-            n = n->next;
+        if(n2) {
+            for(int i=0; i<m; ++i) {
+                n2 = n2->next;
+            }
+
+            while(n2->next) {
+                n2 = n2->next;
+                n1 = n1->next;
+            }
         }
-        return NULL;
+
+        return n1;
     }
 
 

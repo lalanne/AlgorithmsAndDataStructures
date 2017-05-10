@@ -78,3 +78,35 @@ TEST(bst, size_tree_1_node) {
 
     EXPECT_EQ(1, t.size());
 }
+
+TEST(bst, search_empty_tree) {
+    BinaryTree t(NULL);
+
+    Node target(3);
+    EXPECT_EQ(NULL, t.search(&target));
+}
+
+TEST(bst, search) {
+    Node r(10);
+    Node le(5);
+    Node ri(15);
+    r.left = &le;
+    r.right = &ri;
+
+    Node le1(3);
+    Node ri1(7);
+    le.left = &le1;
+    le.right = &ri1;
+
+    Node le2(13);
+    Node ri2(17);
+    ri.left = &le2;
+    ri.right = &ri2;
+
+    BinaryTree t(&r);
+
+    Node target(3);
+    EXPECT_EQ(3, (t.search(&target))->data);
+}
+
+

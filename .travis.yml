@@ -17,4 +17,9 @@ script:
     - make 
     - ./tests
     - cd -
+    - cd trees/
+    - cmake .
+    - make 
+    - ./tests
+    - cd -
 

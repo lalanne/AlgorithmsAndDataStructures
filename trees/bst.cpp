@@ -109,4 +109,3 @@ TEST(bst, search) {
     EXPECT_EQ(3, (t.search(&target))->data);
 }
 
-
